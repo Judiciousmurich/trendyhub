@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './Signup.css'
+import { useSelector } from "react-redux";
 const SignupForm = () => {
+  const {password:statePassword , email:stateEmail , confirmPassword:stateConfirmPassword} = useSelector((state) => state.user);
   return (
     <div className="signup">
       <div className="signup_image">
@@ -23,7 +25,7 @@ const SignupForm = () => {
             <input
               type="text"
               className="text-input"
-              placeholder="Enter Email"
+              placeholder={stateEmail}
             />
           </div>
           <div>
@@ -31,7 +33,7 @@ const SignupForm = () => {
             <input
               type="password"
               className="text-input"
-              placeholder="Enter Password"
+              placeholder={statePassword}
             />
           </div>
           <div>
@@ -39,7 +41,7 @@ const SignupForm = () => {
             <input
               type="password"
               className="text-input"
-              placeholder="Confirm Password"
+              placeholder= {stateConfirmPassword}
             />
           </div>
           <div className="btn_wrapper">

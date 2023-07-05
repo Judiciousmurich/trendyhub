@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import './Login.css'
+import { useSelector } from "react-redux";
 const LoginForm = () => {
+  const {password: statePassword, email:stateEmail} = useSelector((state) => state.user);
+
   return (
     <div id="wrapper">
       <div id="left">
@@ -14,7 +17,7 @@ const LoginForm = () => {
               <input
                 type="text"
                 className="text-input"
-                placeholder="  judicious@gmail.com"
+                placeholder={stateEmail}
               />
             </div>
             <div>
@@ -22,7 +25,7 @@ const LoginForm = () => {
               <input
                 type="password"
                 className="text-input"
-                placeholder="Password"
+                placeholder={statePassword}
               />
             </div>
             <Link to="/signup"  type="submit" className="btn primary-btn">Login</Link>
