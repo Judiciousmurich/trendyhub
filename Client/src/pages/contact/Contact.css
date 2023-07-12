@@ -1,0 +1,73 @@
+.contact_banner{
+    height: 40vh;
+    margin-top: 10vh;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-image: linear-gradient(to bottom, rgba(1, 4, 42, 0.3), rgba(0, 0, 0, 0.5)), url(../image/contact_banner.jpg);
+  }
+  .contact_banner > div{
+    color: white;
+  }
+  .contact_banner > div i{
+    padding-top: 1.5rem;
+    font-weight: 1000;
+    text-decoration: none;
+  }
+  .contact_banner > div i a{
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+  }
+  .contact .service{
+    background-color: white;
+  }
+  .contact .service .service_img p{
+    font-size: 1rem;
+    color: black;
+  }
+  .main_contact{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .main_contact .map{
+    width: 100%;
+  }
+  .main_contact .contact_form{
+    width: 100%;
+    background-color: #E9EAF2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .main_contact .contact_form form{
+    padding: 1rem;
+  }
+  .main_contact .contact_form form h1{
+    font-size: 2.5rem;
+    font-weight: bolder;
+  }
+  .main_contact .contact_form form input{
+    border-radius: 1rem;
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem;
+    margin-left: 0rem;
+  }
+  .main_contact .contact_form form textarea{
+    padding: 1.5rem;
+    height: 10rem;
+    width: 100%;
+    border-radius: 1.25rem;
+    resize: none;
+    margin-bottom: 1.5rem;
+  }
+  .main_contact .contact_form form a{
+    margin-bottom: 1rem;
+  }
+  
+  
+  
+  

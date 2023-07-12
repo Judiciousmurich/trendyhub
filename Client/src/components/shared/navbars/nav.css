@@ -1,0 +1,48 @@
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-icons {
+    display: flex;
+    gap: 1rem
+}
+
+.nav-icons p {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:transparent;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.nav-search {
+    width: 60%;
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 50px;
+}
+
+.nav-links {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.links {
+    /* justify-content: flex-end; */
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    color:#a8a4a4;
+}
+
+.active{
+    text-decoration: underline;
+    color: black;
+}
