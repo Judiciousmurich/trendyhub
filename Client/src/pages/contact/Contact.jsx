@@ -3,40 +3,20 @@ import locationIcon from "../images/location_icon.png";
 import mailIcon from "../images/mail_icon.png";
 import phoneIcon from "../images/phone_icon.png";
 import timeIcon from "../images/time_icon.png";
-
-const ContactPage = () => {
+import'./Contact.css'
+const Contact = () => {
   return (
     <>
       <div className="contact_banner">
         <div>
-          <h1>Contact Us</h1>
+        
           <i>
-          <Link to="/">Home</Link> / Contact Us
+          <Link to="/"className="mb-3">Home</Link> / Contact Us
+          <h1 className="font-bold">Contact Us</h1>
           </i>
         </div>
       </div>
-      <div className="contact">
-        <div className="service">
-          <div className="service_img">
-            <div>
-              <img src={locationIcon} alt="Location" />
-              <p>county Kirinyaga  kerugoya kutus</p>
-            </div>
-            <div>
-              <img src={mailIcon} alt="Email" />
-              <p>contact@dreamhouse.com</p>
-            </div>
-            <div>
-              <img src={phoneIcon} alt="Phone" />
-              <p>(+254) 67453456789</p>
-            </div>
-            <div>
-              <img src={timeIcon} alt="Time" />
-              <p>7 Days / 24 Hour a Day</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    
       <div className="main_contact">
         <div className="map">
         <iframe
@@ -66,4 +46,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default Contact;

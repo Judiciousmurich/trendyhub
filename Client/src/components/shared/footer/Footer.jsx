@@ -25,12 +25,22 @@ const Footer = () => {
         <Link>Kerugoya</Link>
         <Link>76051</Link>
       </div>
-      <div className='flex flex-col gap-2'>
-        <Link className='font-bold'>Subscribe To Our Email</Link>
-        <h1 className='font-bold text-4xl'>For Latest News & <br/>Updates</h1>
-        <input type="search"placeholder='Enter Your Email' />
-        <Link>Link</Link>
-      </div>
+      <div className=" grid">
+          <h3 className="font-bold">Subscribe To Our Email</h3>
+          <p className="font-bold">
+            For Latest News & Updates
+          </p>
+          <div className="flex bg-[#ededed]">
+            <input
+              type="email"
+              placeholder="Enter Your Email"
+              className=" bg-[#ededed] p-2 rounded"
+            />
+            <button className="bg-[#f42c37] text-[#ffffff]">
+              Subscribe
+            </button>
+          </div>
+    </div>
     </div>
   )
 }

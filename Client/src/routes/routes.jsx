@@ -11,6 +11,7 @@ import AdminProductList from "../components/admin/products/AdminProductList";
 import UpdateProduct from "../components/admin/products/UpdateProduct";
 import ProductDetails from "../components/user/product/ProductDetails";
 import Home from "../pages/home/Home";
+import Contact from "../pages/contact/Contact";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -19,6 +20,7 @@ export const router = createBrowserRouter(
             {/* USER ROUTES*/}
             <Route path="" element={<UserLayout />}>
                 <Route path="" element={<Home />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="products" element={<ProductList />} />
                 <Route path="cart" element={<Cart />} />
 
