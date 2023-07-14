@@ -13,7 +13,7 @@ const Devices = ({ bgColor, textColor, text, description, title, buttonBgColor, 
   };
 
   return (
-    <div className="bg-[#282828] p-[4rem]" style={containerStyle}>
+    <div className="bg-[#282828] p-[4rem] rounded-[10px]" style={containerStyle}>
       <div className="flex flex-col gap-2">
         <h5 className="text-[#ffffff]" style={textStyles}>{text}</h5>
         <h1 className="font-bold text-5xl text-[#ffffff]" style={textStyles}>{description}</h1>

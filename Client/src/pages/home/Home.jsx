@@ -33,7 +33,7 @@ const Home = () => {
 
       {/* DEVICES PAGE */}
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-8 rounded-[20px]">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 p-8  ">
         <Devices
           bgColor="#282828"
           textColor="#ffffff"
