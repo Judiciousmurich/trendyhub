@@ -1,5 +1,5 @@
 const Service = ({ image, title, description }) => (
-    <div className="service">
+    <div className="service" >
       <img src={image} alt="" />
       <div className="service-info">
         <h3 className="fs-poppins fs-200">{title}</h3>
