@@ -12,6 +12,7 @@ import UpdateProduct from "../components/admin/products/UpdateProduct";
 import ProductDetails from "../components/user/product/ProductDetails";
 import Home from "../pages/home/Home";
 import Contact from "../pages/contact/Contact";
+import Blog from "../pages/blog/Blog";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -21,6 +22,7 @@ export const router = createBrowserRouter(
             <Route path="" element={<UserLayout />}>
                 <Route path="" element={<Home />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/blog" element={<Blog/>} />
                 <Route path="products" element={<ProductList />} />
                 <Route path="cart" element={<Cart />} />
 

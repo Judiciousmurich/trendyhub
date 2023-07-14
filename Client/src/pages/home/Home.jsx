@@ -10,7 +10,7 @@ import Watches from "../../components/shared/Watches"
 const Home = () => {
   return (
     <>
-      <div className="bg-[#dcdcdc] p-[2rem]">
+      <div className="bg-[#dcdcdc] p-[2rem] rounded">
 
         <div className="flex flex-col gap-2">
           <h5>Beats Solo</h5>
