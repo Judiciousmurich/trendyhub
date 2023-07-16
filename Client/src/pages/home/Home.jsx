@@ -1,10 +1,9 @@
-
-import Devices from "../../components/shared/Devices"
-import Headphones from "../../components/shared/Headphones"
-import News from "../../components/shared/News"
-import SellerProducts from "../../components/shared/SellerProducts"
-import Service from "../../components/shared/Service"
-import Watches from "../../components/shared/Watches"
+import Devices from "../../shared/Devices"
+import Headphones from "../../shared/Headphones"
+import News from "../../shared/News"
+import SellerProducts from "../../shared/SellerProducts"
+import Service from "../../shared/Service"
+import Watches from "../../shared/Watches"
 
 
 const Home = () => {
@@ -48,7 +47,7 @@ const Home = () => {
         <Devices
           bgColor="#fec62e"
           textColor="#fed158"
-          text="New"
+          text className="New"
           description="Wear"
           title="GADGETS"
           buttonText="Browse"

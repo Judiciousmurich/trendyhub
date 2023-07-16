@@ -2,17 +2,18 @@ import { createBrowserRouter, createRoutesFromElements, Route } from "react-rout
 import Login from "../pages/auth/Login";
 import Signup from "../pages/auth/Signup";
 import AuthLayout from "../Layouts/AuthLayout";
-import Footer from "../components/shared/footer/Footer";
 import UserLayout from "../Layouts/UserLayout";
-import Cart from "../components/user/cart/Cart";
-import ProductList from "../components/user/product/ProductList";
+
+
 import AdminLayout from "../Layouts/AdminLayout";
-import AdminProductList from "../components/admin/products/AdminProductList";
-import UpdateProduct from "../components/admin/products/UpdateProduct";
-import ProductDetails from "../components/user/product/ProductDetails";
 import Home from "../pages/home/Home";
+import Cart from "../user/components/cart/Cart";
+import ProductList from "../user/components/product/ProductList";
 import Contact from "../pages/contact/Contact";
 import Blog from "../pages/blog/Blog";
+import ProductDetails from "../user/components/product/ProductDetails";
+import UpdateProduct from "../admin/components/products/UpdateProduct";
+import AdminProductList from "../admin/components/products/AdminProductList";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -22,9 +23,9 @@ export const router = createBrowserRouter(
             <Route path="" element={<UserLayout />}>
                 <Route path="" element={<Home />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/blog" element={<Blog/>} />
+                <Route path="/blog" element={<Blog />} />
                 <Route path="products" element={<ProductList />} />
-                <Route path="cart" element={<Cart />} />
+                <Route path="cart" element={<Cart/>} />
 
             </Route>
             {/* ADMIN ROUTES */}
@@ -39,7 +40,6 @@ export const router = createBrowserRouter(
                 <Route path="login" element={<Login />} />
                 <Route path="signup" element={<Signup />} />
             </Route>
-            {/* <Route path="footer" element={<Footer />} /> */}
 
         </Route>
     )

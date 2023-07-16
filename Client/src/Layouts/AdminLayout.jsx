@@ -1,6 +1,6 @@
 import React from 'react'
-import SideNav from '../components/shared/navbars/SideNav'
 import { Outlet } from 'react-router-dom'
+import SideNav from '../shared/navbars/SideNav'
 
 const AdminLayout = () => {
   return (

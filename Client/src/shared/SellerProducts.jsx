@@ -1,6 +1,6 @@
 import React from 'react'
 import { FaRegStar, FaStar } from 'react-icons/fa'
-import Product from '../user/product/Product'
+import Product from '../user/components/product/Product'
 
 const SellerProducts = () => {
   return (
@@ -28,7 +28,7 @@ const SellerProducts = () => {
 
         </div>
       
-      <Product />
+      <Product/>
       <Product />
       <Product />
       <Product />

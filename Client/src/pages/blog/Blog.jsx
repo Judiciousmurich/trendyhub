@@ -1,5 +1,5 @@
 import React from 'react'
-import News from '../../components/shared/News'
+import News from '../../shared/News'
 
 const Blog = () => {
   return (

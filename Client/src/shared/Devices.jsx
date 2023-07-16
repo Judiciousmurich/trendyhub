@@ -1,5 +1,3 @@
-
-
 const Devices = ({ bgColor, textColor, text, description, title, buttonBgColor, buttonText, image }) => {
   const containerStyle = {
     backgroundColor: bgColor,
@@ -13,7 +11,7 @@ const Devices = ({ bgColor, textColor, text, description, title, buttonBgColor, 
   };
 
   return (
-    <div className="bg-[#282828] p-[4rem] rounded-[10px]" style={containerStyle}>
+    <div className="bg-[#282828] p-[4rem] rounded-[10px] transition-transform duration-500 transform hover:-translate-y-1 hover:scale-90" style={containerStyle}>
       <div className="flex flex-col gap-2">
         <h5 className="text-[#ffffff]" style={textStyles}>{text}</h5>
         <h1 className="font-bold text-5xl text-[#ffffff]" style={textStyles}>{description}</h1>
@@ -24,7 +22,5 @@ const Devices = ({ bgColor, textColor, text, description, title, buttonBgColor, 
     </div>
   );
 };
-
-
 
 export default Devices;
