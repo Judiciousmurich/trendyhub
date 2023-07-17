@@ -1,17 +1,22 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaShoppingBag, FaSearch } from "react-icons/fa";
 import './nav.css';
 
 const Navbar = () => {
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+   
+    window.location.href = '/login';
+  };
+
+  const user = JSON.parse(localStorage.getItem('user'));
   return (
     <>
       <div className="navbar">
-        {/* <ul className="navbar-list">
-        <li className="navbar-item"><Link to="/">Home</Link></li>
-      </ul> */}
+       
         <div className='text-[#f42c37] tracking-wider text-3xl font-bold'>
-            TrendyHub
+            <Link to ="/">TrendyHub</Link>
           
         </div>
         <div className="links">
@@ -31,9 +36,17 @@ const Navbar = () => {
             Contact Us
           </NavLink>
         </div>
-        <NavLink to="/auth/login" className="btn">
-          Login
-        </NavLink>
+        {!user &&(
+           <NavLink to="/auth/login" className="btn">
+           Login
+         </NavLink>
+        )}
+         {user && (
+          <button className="btn" onClick={handleLogout} style={{fontSize:"1rem"}}>
+            Logout
+          </button>
+        )}
+       
 
         <div className='nav-icons'>
           <p>

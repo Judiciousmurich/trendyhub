@@ -5,7 +5,7 @@ import {
   createCategory,
   updateCategory,
   deleteCategory,
-} from '../controllers/categoryController.js';
+} from '../controllers/categoriesControllers.js';
 
 const categoryRoutes = (app) => {
   app.route('/categories')

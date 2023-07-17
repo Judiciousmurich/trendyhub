@@ -5,7 +5,7 @@ import {
   createProduct,
   updateProduct,
   deleteProduct,
-} from '../controllers/productController.js';
+} from '../controllers/productControllers.js';
 
 const productRoutes = (app) => {
   app.route('/products')

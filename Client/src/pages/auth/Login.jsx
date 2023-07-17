@@ -1,8 +1,41 @@
 import { Link } from "react-router-dom";
 import './login.css'
-import { useSelector } from "react-redux";
+import { useContext } from 'react';
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup"
+import Axios from "axios";
+import { Context } from "../../../src/context/Context";
+import { apiDomain } from '../../utils/utilsDomain';
+import { useNavigate } from 'react-router-dom';
+
 const Login = () => {
-  const {password: statePassword, email:stateEmail} = useSelector((state) => state.user);
+ 
+  const { dispatch } = useContext(Context);
+  const navigate = useNavigate();
+  const schema = yup.object().shape({
+    username: yup.string().required("Username is required"),
+    password: yup.string().required("Password is required"),
+  });
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+  });
+
+  const onSubmit = (data) => {
+    Axios.post(apiDomain + "auth/login", data)
+      .then(({data}) => {
+        // console.log(data);
+        if (data.token) {
+          dispatch({ type: "LOGIN_SUCCESS", payload: data.token });
+          localStorage.setItem("user", JSON.stringify(data.token));
+          navigate('/')
+        }
+      })
+      .catch(({ response }) => {
+        console.log(response);
+        alert(response.data.error);
+      });
+  };
 
   return (
     <div id="wrapper">
@@ -11,23 +44,27 @@ const Login = () => {
           <div className="logo">
           <Link to="/">TrendyHub </Link>
           </div>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
+          
+          
             <div>
               <label>Email</label>
               <input
                 type="text"
-                className="text-input"
-                placeholder={stateEmail}
+                className="text-input" required="required"  {...register("email")}
+                placeholder="name@gmail.com"
               />
             </div>
+            <p className="error">{errors.email?.message}</p>
             <div>
               <label>Password</label>
               <input
                 type="password"
-                className="text-input"
-                placeholder={statePassword}
+                className="text-input" required {...register("password")}
+                placeholder="enter your pasword"
               />
             </div>
+            <p>{errors.password?.message}</p>
             <Link to="/auth/signup"  type="submit" className="btn primary-btn">Login</Link>
           </form>
           <div className="links">

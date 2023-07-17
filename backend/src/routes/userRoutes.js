@@ -5,7 +5,7 @@ import {
   createUser,
   updateUser,
   deleteUser,
-} from '../controllers/userController.js';
+} from '../controllers/userControllers.js';
 
 const userRoutes = (app) => {
   app.route('/users')

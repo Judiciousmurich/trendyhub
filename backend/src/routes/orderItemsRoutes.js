@@ -5,7 +5,7 @@ import {
   createOrderItem,
   updateOrderItem,
   deleteOrderItem,
-} from '../controllers/orderItemController.js';
+} from '../controllers/orderItemsControllers.js';
 
 const orderItemRoutes = (app) => {
   app.route('/order-items')

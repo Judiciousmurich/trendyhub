@@ -1,5 +1,5 @@
 import sql from 'mssql';
-import config from '../db/config.js';
+import config from '../config/config.js';
 
 // Get all orders
 export const getOrders = async (req, res) => {

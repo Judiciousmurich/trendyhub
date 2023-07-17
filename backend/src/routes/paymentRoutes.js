@@ -5,7 +5,7 @@ import {
   createPayment,
   updatePayment,
   deletePayment,
-} from '../controllers/paymentController.js';
+} from '../controllers/paymentsControllers.js';
 
 const paymentRoutes = (app) => {
   app.route('/payments')

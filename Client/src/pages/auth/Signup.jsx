@@ -1,9 +1,43 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import './signup.css'
-import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import Axios from "axios";
+import { useForm } from "react-hook-form";
+import { apiDomain } from "../../utils/utilsDomain";
 const Signup = () => {
-  const {password:statePassword , email:stateEmail , confirmPassword:stateConfirmPassword} = useSelector((state) => state.user);
+ 
+  const navigate = useNavigate();
+
+  const schema = yup.object().shape({
+  username: yup.string().required("Username is required " ),
+  email: yup.string().required("Email is required"),
+  password: yup
+    .string()
+    .required("Password is required")
+    .matches(
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+      "Password must contain at least 8 characters, one letter, one number, and one special character"
+    ),
+});
+
+
+const { register, handleSubmit, formState: { errors } } = useForm({
+  resolver: yupResolver(schema),
+});
+const onSubmit = (data) => {
+  Axios.post(apiDomain + "auth/signup", data)
+    .then((response) => {
+      response.data.message && alert(response.data.message)
+      navigate("/login")
+    })
+    .catch((error) => {
+      console.log(error);
+    })
+}
+
   return (
     <div className="signup">
       <div className="signup_image">
@@ -17,33 +51,36 @@ const Signup = () => {
         </div>
       </div>
       <div className="signup_form">
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
           {/* <h2>Dont Have an Account?</h2> */}
           <h1>Register Here</h1>
           <div>
             <label>Email</label>
             <input
               type="text"
-              className="text-input"
-              placeholder={stateEmail}
+              className="text-input" required="required"  {...register("email")}
+              placeholder="Enter your Email"
             />
           </div>
+          <p className="error">{errors.email?.message}</p>
           <div>
             <label>Password</label>
             <input
               type="password"
-              className="text-input"
-              placeholder={statePassword}
+              className="text-input" required="required"   {...register("password")}
+              placeholder="password"
             />
           </div>
+          <p className="error" style={{color:"red"}} >{errors.password?.message}</p>
           <div>
             <label>Confirm Password</label>
             <input
               type="password"
-              className="text-input"
-              placeholder= {stateConfirmPassword}
+              className="text-input" required="required"   {...register("confirmpassword")} 
+              placeholder= "********"
             />
           </div>
+          <p>{errors.confirmpassword?.message}</p>
           <div className="btn_wrapper">
             <Link to="#" className="btn">
               Sign Up

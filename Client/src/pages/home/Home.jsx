@@ -1,3 +1,4 @@
+import Clients from "../../shared/Clients"
 import Devices from "../../shared/Devices"
 import Headphones from "../../shared/Headphones"
 import News from "../../shared/News"
@@ -147,8 +148,10 @@ const Home = () => {
           title="HOW to choose perfect gadgets"
           description="When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper s ..."
         />
-
+     
       </div>
+      <Clients/>
+
 
 
 
