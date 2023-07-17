@@ -7,9 +7,9 @@ const Footer = () => {
     <div className='flex justify-between m-[2rem]'>
       <div className='flex flex-col gap-2'>
         <Link className='text-[#f77b82] font-bold tracking-widest mb-5'>TRENDYHUB</Link>
-       <p className='mb-5 text-[#d7d7d7]'>There are many variations passages of,<br/> Lorem Ipsum available, but the majority have</p>
-       <p className='flex gap-5'><FaFacebook/><FaInstagram/> <FaLinkedin/><FaTwitter/></p>
-    
+        <p className='mb-5 text-[#d7d7d7]'>There are many variations passages of,<br /> Lorem Ipsum available, but the majority have</p>
+        <p className='flex gap-5'><FaFacebook /><FaInstagram /> <FaLinkedin /><FaTwitter /></p>
+
       </div>
       <div className='flex flex-col gap-2'>
         <Link className='font-bold mb-3'> Quick Links</Link>
@@ -26,21 +26,21 @@ const Footer = () => {
         <Link>76051</Link>
       </div>
       <div className=" grid">
-          <h3 className="font-bold">Subscribe To Our Email</h3>
-          <p className="font-bold">
-            For Latest News & Updates
-          </p>
-          <div className="flex bg-[#ededed]">
-            <input
-              type="email"
-              placeholder="Enter Your Email"
-              className=" bg-[#ededed] p-2 rounded"
-            />
-            <button className="bg-[#f42c37] text-[#ffffff]">
-              Subscribe
-            </button>
-          </div>
-    </div>
+        <h3 className="font-bold">Subscribe To Our Email</h3>
+        <p className="font-bold">
+          For Latest News & Updates
+        </p>
+        <div className="flex bg-[#ededed]  p-3 rounded-[50px]">
+          <input
+            type="email"
+            placeholder="Enter Your Email"
+            className=" bg-[#ededed]  "
+          />
+          <button className="bg-[#f42c37] rounded-[50px] py-2 px-8  text-[#ffffff] ">
+            Subscribe
+          </button>
+        </div>
+      </div>
     </div>
   )
 }

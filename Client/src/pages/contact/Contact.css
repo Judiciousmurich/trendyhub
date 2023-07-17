@@ -37,7 +37,7 @@
   }
   .main_contact .contact_form{
     width: 100%;
-    background-color: #E9EAF2;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +51,7 @@
   }
   .main_contact .contact_form form input{
     border-radius: 1rem;
+  background-color: #efefef;
     width: 100%;
     padding: 1rem;
     margin: 0.5rem;
@@ -60,6 +61,7 @@
     padding: 1.5rem;
     height: 10rem;
     width: 100%;
+    background-color: #efefef;
     border-radius: 1.25rem;
     resize: none;
     margin-bottom: 1.5rem;
