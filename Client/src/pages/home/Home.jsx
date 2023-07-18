@@ -12,7 +12,7 @@ const Home = () => {
     <>
       <div className="bg-[#dcdcdc] px-[2rem] rounded-[20px] m-6 ">
 
-        <div className="flex flex-col gap-2 py-[8rem]">
+        <div className="flex flex-col gap-2 py-[6rem]">
           <h5>Beats Solo</h5>
           <h1 className="font-bold text-5xl text-[#000000]">Wireless</h1>
           <h1 className="relative font-bold text-[#f8f8f8] text-[10rem] w-full">HEADPHONE</h1>
@@ -23,9 +23,9 @@ const Home = () => {
         <div className="flex  flex-col items-end  h-[10rem] ">
           <div></div>
           <div className="flex flex-col w-[40%]  items-end ">
-            <p className="font-bold">Description</p>
-            <p className="text-center">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quos officiis facilis modi consequatur a? Voluptas ab nemo sunt' excepturi illum?
+            <p className="font-bold text-1xl mx-2">Description</p>
+            <p className="text-center tracking-wide text-[#666666]">
+            There are many variations passages <br/>of Lorem Ipsum available, but the<br/> majority have suffered alteration
             </p>
           </div>
         </div>
