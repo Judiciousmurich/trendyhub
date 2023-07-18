@@ -3,7 +3,7 @@ import React from 'react'
 const Headphones = () => {
   return (
     <>
-        <div className="flex justify-between m-[2rem] p-[2rem] rounded-[7px] bg-[#f42c37] text-white ">
+        <div className="flex justify-between m-[2rem] p-[3rem] rounded-[7px] bg-[#f42c37] text-white ">
     <div className="">
         <p>20% OFF</p>
         <h1 className="text-5xl font-bold mb-3">FINE <span>SMILE </span></h1>
