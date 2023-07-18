@@ -1,5 +1,5 @@
 const Service = ({ image, title, description }) => (
-  <div className="flex gap-4 items-center service my-[5rem] " >
+  <div className="flex gap-4 items-center service sm:my-[5rem] " >
     <img src={image} alt="" />
     <div className="service-info">
       <h3 className="font-bold text-lg fs-poppins fs-200">{title}</h3>

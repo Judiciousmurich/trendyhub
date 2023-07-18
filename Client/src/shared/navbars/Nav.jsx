@@ -6,7 +6,7 @@ import './nav.css';
 const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem('user');
-   
+
     window.location.href = '/login';
   };
 
@@ -14,10 +14,10 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar">
-       
+
         <div className='text-[#f42c37] tracking-wider text-3xl font-bold'>
-            <Link to ="/">TrendyHub</Link>
-          
+          <Link to="/">TrendyHub</Link>
+
         </div>
         <div className="links">
           <NavLink to="/" >
@@ -36,17 +36,17 @@ const Navbar = () => {
             Contact Us
           </NavLink>
         </div>
-        {!user &&(
-           <NavLink to="/auth/login" className="btn">
-           Login
-         </NavLink>
+        {!user && (
+          <NavLink to="/auth/login" className="btn">
+            Login
+          </NavLink>
         )}
-         {user && (
-          <button className="btn" onClick={handleLogout} style={{fontSize:"1rem"}}>
+        {user && (
+          <button className="btn" onClick={handleLogout} style={{ fontSize: "1rem" }}>
             Logout
           </button>
         )}
-       
+
 
         <div className='nav-icons'>
           <p>

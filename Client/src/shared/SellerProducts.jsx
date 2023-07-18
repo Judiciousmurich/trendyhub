@@ -16,8 +16,17 @@ const SellerProducts = () => {
                 <img className='rounded-[10px] h-full object-contain' src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1269-935x701.jpg" alt="product" />
             </div>
           
-            <h3 className='font-bold'>Game Console Controller</h3>
-             <p>$8,250</p> 
+               <h3 className="font-bold  hover:text-red-500 transition-all duration-300">
+          Rocky Mountain
+        </h3>
+        <p className="relative inline-block group font bold">
+          <span className="inline-block transition-all duration-300 transform group-hover:translate-x-[-100%]transform -translate-x-[-100%] group-hover:translate-x-0 ">
+            $8,250
+          </span>
+          <button className=" left-full group-hover:translate-y-0 bg-red-500 text-white   rounded-[20px]  opacity-0 group-hover:opacity-100 transition-all duration-300 text-[0.5px] ">
+            Add to Cart
+          </button>
+        </p>
         
 
         </div>
@@ -27,9 +36,15 @@ const SellerProducts = () => {
       <Product />
       <Product />
       <Product />
+      <Product/>
       <Product />
       <Product />
       <Product />
+      <Product />
+      <Product/>
+      
+    
+     
     </div>
 
         </>
