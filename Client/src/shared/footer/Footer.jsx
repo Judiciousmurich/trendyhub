@@ -1,9 +1,11 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
+import Terms from '../Terms'
 
 const Footer = () => {
   return (
+    <>
     <div className='flex justify-between m-[2rem]'>
       <div className='flex flex-col gap-2'>
         <Link className='text-[#f77b82] font-bold tracking-widest mb-5'>TRENDYHUB</Link>
@@ -42,6 +44,8 @@ const Footer = () => {
         </div>
       </div>
     </div>
+    <Terms/>
+    </>
   )
 }
 

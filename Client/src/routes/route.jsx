@@ -15,6 +15,7 @@ import ProductDetails from "../user/components/product/ProductDetails";
 import UpdateProduct from "../admin/components/products/UpdateProduct";
 import AdminProductList from "../admin/components/products/AdminProductList";
 import { Dashboard } from "../admin/components/Dashboard";
+import About from "../pages/about/About";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -25,6 +26,7 @@ export const router = createBrowserRouter(
                 <Route path="" element={<Home />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/blog" element={<Blog />} />
+                <Route path="/about" element={<About />} />
                 <Route path="products" element={<ProductList />} />
                 <Route path="cart" element={<Cart />} />
 
