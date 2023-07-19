@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 
 
 const PriceFilter = () => {
-  const [minPrice, setMinPrice] = useState(300);
-  const [maxPrice, setMaxPrice] = useState(2000);
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(80000);
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   const products = [
-    { name: 'Product A', price: 500 },
-    { name: 'Product B', price: 1000 },
-    { name: 'Product C', price: 1500 },
+    { name: 'Rocky Mountain', price:8250 },
+    { name: 'Rocky Mountain', price: 8250 },
+    { name: 'Rocky Mountain', price: 8250 },
     // Add more products here
   ];
 
@@ -27,15 +27,15 @@ const PriceFilter = () => {
           <label htmlFor="max-price"></label>
           <div className="flex items-center">
             <div className="flex items-center">
-              <div className="font-bold">$300</div>
+              <div className="font-bold">$0</div>
              
             </div>
             <input
               type="range"
               className="bg-[#f42c37] w-[80%] px-6 m-6"
               id="max-price"
-              min={300}
-              max={2000}
+              min={0}
+              max={80000}
               value={maxPrice}
               onChange={(e) => setMaxPrice(Number(e.target.value))}
             />

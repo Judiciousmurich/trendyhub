@@ -30,7 +30,7 @@ const ProductsTable = () => {
     };
 
     return (
-        <table className="min-w-full border-collapse">
+        <table className="min-w-full border-collapse m-6  ">
             <thead>
                 <tr>
                     <th className="py-2 text-left px-4 border  bg-gray-200 text-gray-600 font-bold uppercase text-sm border-b">Product Name</th>

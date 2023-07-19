@@ -7,7 +7,7 @@ export const Dashboard = () => {
   const [tally, setTally] = useState("45%");
   return (
     <div className=" w-full">
-      <div className="flex justify-between border px-4 py-7">
+      <div className="flex justify-between px-4 py-7 gap-4">
         <Box icon="" tally={tally} text="New Orders" bg="bg-[#9559a8]" />
         <Box icon="" tally={tally} text="All Users" bg="bg-[#ed5637]" />
         <Box icon=" " tally={tally} text="Products Count" bg="bg-[#3a599b]" />

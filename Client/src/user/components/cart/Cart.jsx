@@ -2,8 +2,19 @@ import { Link } from 'react-router-dom'
 import './cart.css'
 import Clients from '../../../shared/Clients'
 import Product from '../product/Product'
+import CheckoutPage from '../checkout/Checkout'
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Cart = () => {
+  const navigate = useNavigate();
+
+  const handleProceedToCheckout = () => {
+    navigate('/checkout');
+  };
+
+
   return (
     <>
 
@@ -22,6 +33,7 @@ const Cart = () => {
               <span className="font-bold ">
                 $8,250
               </span>
+             
               </p>
            </div>
 
@@ -35,7 +47,15 @@ const Cart = () => {
           <hr />
           <div>
             <p className='mb-4 font bold'>Total Price:</p>
-            <p className='font-bold '>$0.000</p>
+            <p className='font-bold mb-4'>$0.000</p>
+       {/* Use the handleProceedToCheckout function to navigate to the CheckoutPage */}
+            <button
+              className='bg-black text-white px-8 py-4 rounded mb-4'
+              onClick={handleProceedToCheckout}
+            >
+              PROCEED TO CHECKOUT
+            </button>
+            
           </div>
         </div>
       </div>

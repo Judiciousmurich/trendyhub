@@ -17,6 +17,7 @@ import About from "../pages/about/About";
 import UpdateProductForm from "../admin/components/UpdateProduct";
 import ProductsTable from "../admin/components/ProductsTable";
 import UsersTable from "../admin/components/UsersTable";
+import CheckoutPage from "../user/components/checkout/Checkout";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -30,6 +31,7 @@ export const router = createBrowserRouter(
                 <Route path="/about" element={<About />} />
                 <Route path="products" element={<ProductList />} />
                 <Route path="cart" element={<Cart />} />
+                <Route path="checkout" element={<CheckoutPage />} />
 
             </Route>
             {/* ADMIN ROUTES */}
