@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export const Sidebar = () => {
   return (
@@ -10,15 +11,15 @@ export const Sidebar = () => {
     >
       <div className="w-[15%] bg-black min-h-[90vh] py-4">
         <div className="h-full text-white pl-4  flex flex-col gap-4 cursor-pointer">
-          <div className="flex items-center gap-2">
+          <Link to="" className="flex items-center gap-2">
             Dashboard
-          </div>
-          <div className="flex items-center gap-2 text-white">
+          </Link>
+          <Link to="products" className="flex items-center gap-2 text-white">
             Products
-          </div>
-          <div className="flex items-center gap-2">
-             Users
-          </div>
+          </Link>
+          {/* <div className="flex items-center gap-2">
+            Users
+          </div> */}
 
         </div>
       </div>

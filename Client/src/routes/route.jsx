@@ -12,10 +12,10 @@ import ProductList from "../user/components/product/ProductList";
 import Contact from "../pages/contact/Contact";
 import Blog from "../pages/blog/Blog";
 import ProductDetails from "../user/components/product/ProductDetails";
-import UpdateProduct from "../admin/components/products/UpdateProduct";
-import AdminProductList from "../admin/components/products/AdminProductList";
 import { Dashboard } from "../admin/components/Dashboard";
 import About from "../pages/about/About";
+import UpdateProductForm from "../admin/components/UpdateProduct";
+import ProductsTable from "../admin/components/ProductsTable";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -32,10 +32,10 @@ export const router = createBrowserRouter(
 
             </Route>
             {/* ADMIN ROUTES */}
-            <Route path="admin" element={<AdminLayout />}>
+            <Route path="/admin" element={<AdminLayout />}>
                 <Route path="" element={<Dashboard />} />
-                <Route path="products" element={<AdminProductList />} />
-                <Route path="update/:product_id" element={<UpdateProduct />} />
+                <Route path="products" element={<ProductsTable />} />
+                <Route path="update/:product_id" element={<UpdateProductForm />} />
                 <Route path="more/:product_id" element={<ProductDetails />} />
             </Route>
             {/* AUTH ROUTES */}

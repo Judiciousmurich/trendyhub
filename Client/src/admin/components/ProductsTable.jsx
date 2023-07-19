@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductsTable = () => {
+    const navigate = useNavigate()
     const data = [
         {
             id: 1,
@@ -24,6 +26,7 @@ const ProductsTable = () => {
 
     const handleUpdate = (id) => {
         console.log('Updating item with ID:', id);
+        navigate("/admin/update/" + id)
     };
 
     return (

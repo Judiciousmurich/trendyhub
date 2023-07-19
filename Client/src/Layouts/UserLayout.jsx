@@ -5,7 +5,7 @@ import Navbar from "../shared/navbars/Nav"
 
 const UserLayout = () => {
     return (
-        <div className="user-layout">
+        <div className="user-layout overflow-hidden">
             <div>
                 <Navbar />
                 <Outlet />
