@@ -1,33 +1,48 @@
 import { Link } from 'react-router-dom'
 import './cart.css'
 import Clients from '../../../shared/Clients'
+import Product from '../product/Product'
 
 const Cart = () => {
   return (
     <>
-    <div className="bg-[#e2e2e2] w-screen p-16  mb-8 ">
-    <i className="flex flex-col items-center w-full">
-      <Link to="/" className=" text-[#666666]">Home / Cart</Link>
-      <h1 className="font-bold text-4xl ">Cart</h1>
-    </i>
-  </div>
-    <div className='cart'>
-      <div>
-        <img className="h-[5rem]" src="https://cdn.pixabay.com/photo/2013/07/13/12/17/headphone-159569_1280.png" alt="" />
-        <img src="" alt="" />
-      </div>
-      <div>
-        <h3>cart summarry</h3>
-        <hr />
+
+      <div className='cart'>
         <div>
-          <p>Total Price:</p>
-          <p>$0.000</p>
+          <div className="flex  gap-10 cursor-pointer select align-middle">
+            <div className=' rounded-[5px]  h-[10rem]'>
+              <img className='rounded-[10px] h-full object-contain mb-4' src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1269-935x701.jpg" alt="product" />
+            </div>
+
+           <div >
+           <h3 className="font-bold  hover:text-red-500 transition-all duration-300">
+              Rocky Mountain
+            </h3>
+            <p className="relative inline-block group font bold">
+              <span className="font-bold ">
+                $8,250
+              </span>
+              </p>
+           </div>
+
+      
+
+
+          </div>
+        </div>
+        <div>
+          <h3 className='font-bold mb-4 hover:text-red-500 cursor-pointer'>cart summarry</h3>
+          <hr />
+          <div>
+            <p className='mb-4 font bold'>Total Price:</p>
+            <p className='font-bold '>$0.000</p>
+          </div>
         </div>
       </div>
-    </div>
-    <Clients/>
+      <hr/>
+
     </>
-   
+
   )
 }
 
