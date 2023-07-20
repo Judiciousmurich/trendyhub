@@ -7,7 +7,7 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem('user');
 
-    window.location.href = '/login';
+    window.location.href = '/auth/login';
   };
 
   const user = JSON.parse(localStorage.getItem('user'));
@@ -20,6 +20,8 @@ const Navbar = () => {
 
         </div>
         <div className="links">
+        {user && (
+          <>
           <NavLink to="/" >
             Home
           </NavLink>
@@ -35,6 +37,9 @@ const Navbar = () => {
           <NavLink to="/contact" >
             Contact Us
           </NavLink>
+          </>
+
+        )}
         </div>
         {!user && (
           <NavLink to="/auth/login" className="btn">
@@ -43,7 +48,7 @@ const Navbar = () => {
         )}
         {user && (
           <button className="btn" onClick={handleLogout} style={{ fontSize: "1rem" }}>
-            Logout
+          Logout
           </button>
         )}
 

@@ -98,7 +98,8 @@ const ProductList = () => {
               Showing 1-9 of 10 results
             </h1>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <Product />
             <Product />
             <Product />
             <Product />

@@ -10,6 +10,12 @@ const PriceFilter = () => {
     { name: 'Rocky Mountain', price:8250 },
     { name: 'Rocky Mountain', price: 8250 },
     { name: 'Rocky Mountain', price: 8250 },
+    { name: 'Rocky Mountain', price:8250 },
+    { name: 'Rocky Mountain', price: 8250 },
+    { name: 'Rocky Mountain', price: 8250 },
+    { name: 'Rocky Mountain', price:8250 },
+    { name: 'Rocky Mountain', price: 8250 },
+    { name: 'Rocky Mountain', price: 8250 },
     // Add more products here
   ];
 

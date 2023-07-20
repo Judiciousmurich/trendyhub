@@ -17,8 +17,6 @@ const Product = () => {
         console.error('Error fetching products:', error);
       });
   }, []);
-    const numberOfProducts = 6;
-  const displayedProducts = products.slice(0, numberOfProducts);
 
   return (
     <>
@@ -28,7 +26,7 @@ const Product = () => {
           <div className="rounded-[5px] h-[13rem]">
             <img
               className="rounded-[10px] h-full object-contain"
-              src='https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1269-935x701.jpg'
+              src={product.imageURL}
               alt={product.Name}
             />
           </div>

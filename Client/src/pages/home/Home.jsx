@@ -5,9 +5,19 @@ import News from "../../shared/News"
 import SellerProducts from "../../shared/SellerProducts"
 import Service from "../../shared/Service"
 import Watches from "../../shared/Watches"
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 const Home = () => {
+  const navigate = useNavigate()
+  const user = JSON.parse(localStorage.getItem("user"))
+  useEffect(() => {
+    if (!user) {
+      return navigate("/auth/login")
+    }
+  }, [user])
+  if (user) {
   return (
     <>
       <div className="bg-[#dcdcdc] px-[2rem] rounded-[20px] m-6 ">
@@ -158,7 +168,9 @@ const Home = () => {
 
 
     </>
+
   )
+  }
 }
 
-export default Home
+export default Home;

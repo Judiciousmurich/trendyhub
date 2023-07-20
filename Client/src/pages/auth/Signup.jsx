@@ -12,7 +12,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const schema = yup.object().shape({
-  username: yup.string().required("Username is required " ),
+
   email: yup.string().required("Email is required"),
   password: yup
     .string()
@@ -28,10 +28,11 @@ const { register, handleSubmit, formState: { errors } } = useForm({
   resolver: yupResolver(schema),
 });
 const onSubmit = (data) => {
-  Axios.post(apiDomain + "auth/signup", data)
+  console.log(data)
+  Axios.post(apiDomain + "/auth/signup", data)
     .then((response) => {
       response.data.message && alert(response.data.message)
-      navigate("/login")
+      navigate("/auth/login")
     })
     .catch((error) => {
       console.log(error);
@@ -53,7 +54,7 @@ const onSubmit = (data) => {
       <div className="signup_form">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* <h2>Dont Have an Account?</h2> */}
-          <h1>Register Here</h1>
+          <h1 className="font-bold text-2xl">Register Here</h1>
           <div>
             <label>Email</label>
             <input
@@ -82,9 +83,7 @@ const onSubmit = (data) => {
           </div>
           <p>{errors.confirmpassword?.message}</p>
           <div className="btn_wrapper">
-            <Link to="#" className="btn">
-              Sign Up
-            </Link>
+          <button className="secondary-btn">Sign Up</button>
           </div>
 
           <div className="or">

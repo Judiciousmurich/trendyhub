@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
-import locationIcon from "../images/location_icon.png";
-import mailIcon from "../images/mail_icon.png";
-import phoneIcon from "../images/phone_icon.png";
-import timeIcon from "../images/time_icon.png";
+
 import './Contact.css'
 import Clients from "../../shared/Clients";
 import Service from "../../shared/Service";

@@ -1,10 +1,10 @@
--- Create the Users table
+-- Table for Users
 CREATE TABLE Users (
-    ID INT IDENTITY(1,1) PRIMARY KEY,
-    Name VARCHAR(100),
-    Email VARCHAR(100),
-    Password VARCHAR(100),
-    Address VARCHAR(200)
+  id INT IDENTITY(1,1) PRIMARY KEY,
+  username VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  created_at VARCHAR(255);
 );
 
 -- Insert 10 records into the Users table
@@ -22,29 +22,30 @@ VALUES
     ('Ava Martinez', 'ava.martinez@example.com', 'password10', '579 Maple Rd');
 
 -- Create the Products table
+
+
+-- Create the Products table
 CREATE TABLE Products (
     ID INT IDENTITY(1,1) PRIMARY KEY,
     Name VARCHAR(100),
     Description TEXT,
     Price DECIMAL(10, 2),
     Quantity INT,
-    Category VARCHAR(50),
+    Category VARCHAR(50), -- Store the category name directly
     Manufacturer VARCHAR(100)
 );
 
--- Insert 10 records into the Products table
+-- Insert records into the Products table
 INSERT INTO Products (Name, Description, Price, Quantity, Category, Manufacturer)
 VALUES
-    ('Product 1', 'Description 1', 10.99, 20, 'Category A', 'Manufacturer A'),
-    ('Product 2', 'Description 2', 19.99, 15, 'Category B', 'Manufacturer B'),
-    ('Product 3', 'Description 3', 5.99, 30, 'Category A', 'Manufacturer C'),
-    ('Product 4', 'Description 4', 8.49, 25, 'Category C', 'Manufacturer D'),
-    ('Product 5', 'Description 5', 14.99, 12, 'Category B', 'Manufacturer E'),
-    ('Product 6', 'Description 6', 7.99, 18, 'Category A', 'Manufacturer F'),
-    ('Product 7', 'Description 7', 11.49, 22, 'Category B', 'Manufacturer G'),
-    ('Product 8', 'Description 8', 9.99, 10, 'Category C', 'Manufacturer H'),
-    ('Product 9', 'Description 9', 6.99, 28, 'Category A', 'Manufacturer I'),
-    ('Product 10', 'Description 10', 12.99, 14, 'Category C', 'Manufacturer J');
+    ('Smartwatch 2.0 LTE Wifi', 'Description for Smartwatch 2.0 LTE Wifi', 199.99, 50, 'Smartwatches', 'Manufacturer X'),
+    ('Wireless Audio System Multiroom 360', 'Description for Wireless Audio System Multiroom 360', 299.99, 30, 'Wireless Audio Systems', 'Manufacturer Y'),
+    ('Gore Wear C7', 'Description for Gore Wear C7', 159.99, 20, 'Cycling Apparel', 'Manufacturer Z'),
+    ('White EliteBook Tablet 810', 'Description for White EliteBook Tablet 810', 899.99, 15, 'Tablets', 'Manufacturer W'),
+    ('Beats', 'Description for Beats', 149.99, 25, 'Music Accessories', 'Manufacturer V'),
+    ('Rocky Mountain', 'Description for Rocky Mountain', 1299.99, 10, 'Cycling Apparel', 'Manufacturer U');
+
+
 
 -- Create the Orders table
 CREATE TABLE Orders (
@@ -121,16 +122,18 @@ CREATE TABLE Categories (
     Description TEXT
 );
 
--- Insert 10 records into the Categories table
+-- Insert records into the Categories table
 INSERT INTO Categories (Name, Description)
 VALUES
-    ('Category A', 'Description A'),
-    ('Category B', 'Description B'),
-    ('Category C', 'Description C'),
-    ('Category D', 'Description D'),
-    ('Category E', 'Description E'),
-    ('Category F', 'Description F'),
-    ('Category G', 'Description G'),
-    ('Category H', 'Description H'),
-    ('Category I', 'Description I'),
-    ('Category J', 'Description J');
+    ('Earphones', 'Description for earphones category'),
+    ('Headphones', 'Description for headphones category'),
+    ('Laptops', 'Description for laptop category'),
+    ('Speakers', 'Description for speakers category'),
+    ('Gadgets', 'Description for gadgets category'),
+    ('Gaming', 'Description for gaming category'),
+    ('Smartwatches', 'Description for smartwatches category'),
+    ('Wireless Audio Systems', 'Description for wireless audio systems category'),
+    ('Cycling Apparel', 'Description for cycling apparel category'),
+    ('Tablets', 'Description for tablets category'),
+    ('Music Accessories', 'Description for music accessories category');
+
