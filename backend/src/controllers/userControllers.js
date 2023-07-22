@@ -39,18 +39,18 @@ export const getUserById = async (req, res) => {
 
 // Create a new user
 export const createUser = async (req, res) => {
-  const { username, password, email } = req.body;
+  const {  password, email } = req.body;
   console.log(req.body)
   const created_at = new Date().toDateString()
   try {
     const pool = await sql.connect(config.sql);
     const result = await pool
       .request()
-      .input('username', sql.NVarChar, username)
+      // .input('username', sql.NVarChar, username)
       .input('password', sql.NVarChar, password)
       .input('email', sql.NVarChar, email)
       .input('created_at', sql.NVarChar, created_at)
-      .query('INSERT INTO Users (username, password, email, created_at) VALUES (@username, @password, @email, @created_at)');
+      .query('INSERT INTO Users (password, email, created_at) VALUES ( @password, @email, @created_at)');
     res.status(201).json({ message: 'User created successfully' });
   } catch (error) {
     res.status(500).json({ error: `An error occurred while creating the user... ${error.message}` });
@@ -62,16 +62,16 @@ export const createUser = async (req, res) => {
 // Update a user by ID
 export const updateUser = async (req, res) => {
   const userId = req.params.id;
-  const { username, password, email } = req.body;
+  const { password, email } = req.body;
   try {
     const pool = await sql.connect(config.sql);
     const result = await pool
       .request()
-      .input('username', sql.NVarChar, username)
+      // .input('username', sql.NVarChar, username)
       .input('password', sql.NVarChar, password)
       .input('email', sql.NVarChar, email)
       .input('id', sql.Int, userId)
-      .query('UPDATE Users SET username = @username, password = @password, email = @email WHERE id = @id');
+      .query('UPDATE Users SET  password = @password, email = @email WHERE id = @id');
     res.status(200).json({ message: 'User updated successfully' });
   } catch (error) {
     res.status(500).json({ error: `An error occurred while updating the user... ${error.message}` });
