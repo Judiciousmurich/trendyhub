@@ -137,3 +137,12 @@ VALUES
     ('Tablets', 'Description for tablets category'),
     ('Music Accessories', 'Description for music accessories category');
 
+--cart table
+    CREATE TABLE cart (
+  cart_id INT PRIMARY KEY IDENTITY(1,1),
+  id INT, -- If applicable, this column can be a foreign key referencing the users table.
+  product_id INT NOT NULL,
+  created_at DATETIME DEFAULT GETDATE(),
+  FOREIGN KEY (id) REFERENCES users(id) -- Replace "users" with your actual users table name.
+);
+

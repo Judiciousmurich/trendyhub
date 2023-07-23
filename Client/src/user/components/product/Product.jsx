@@ -1,29 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { apiDomain } from '../../../utils/utilsDomain';
+import { Context } from '../../../context/Context';
 
 const Product = () => {
-  const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    // Fetch product data from the backend
-    axios.get( `${apiDomain}/products`)
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.error('Error fetching products:', error);
-      });
-  }, []);
-    const numberOfProducts = 6;
+  const { products } = useContext(Context)
+  const numberOfProducts = 6;
   const displayedProducts = products.slice(0, numberOfProducts);
 
   return (
     <>
       {products.map((product) => (
-        
+
         <div key={product.ID} className="flex flex-col gap-2 cursor-pointer select">
           <div className="rounded-[5px] h-[13rem]">
             <img

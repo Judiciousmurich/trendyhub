@@ -9,6 +9,7 @@ import paymentRoutes from './src/routes/paymentRoutes.js';
 import userRoutes from './src/routes/userRoutes.js';
 import cors from 'cors'
 import authRoutes from './src/routes/authRoutes.js';
+import cartRoutes from './src/routes/cartRoute.js';
 
 const app = express();
 //
@@ -23,6 +24,7 @@ orderItemRoutes(app)
 orderRoutes(app)
 productRoutes(app)
 userRoutes(app)
+cartRoutes(app)
 paymentRoutes(app)
 app.get('/', (req, res) => {
     res.send("Hello😁 Welcome ecommerce API!");

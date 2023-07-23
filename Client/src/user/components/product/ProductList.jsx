@@ -46,9 +46,8 @@ const ProductList = () => {
           >
             Product Categories{" "}
             <FaCaretDown
-              className={`inline ml-1 ${
-                showCategories ? "transform rotate-180" : ""
-              }`}
+              className={`inline ml-1 ${showCategories ? "transform rotate-180" : ""
+                }`}
             />
           </h1>
           {showCategories && (
@@ -83,9 +82,8 @@ const ProductList = () => {
           >
             Choose Price{" "}
             <FaCaretDown
-              className={`inline ml-1 ${
-                showPrice ? "transform rotate-180" : ""
-              }`}
+              className={`inline ml-1 ${showPrice ? "transform rotate-180" : ""
+                }`}
             />
           </h1>
 
@@ -99,14 +97,6 @@ const ProductList = () => {
             </h1>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
-            <Product />
             <Product />
           </div>
         </div>
