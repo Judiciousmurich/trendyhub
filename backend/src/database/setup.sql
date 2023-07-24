@@ -48,6 +48,50 @@ VALUES
     ('Beats', 'Description for Beats', 149.99, 25, 'Music Accessories', 'Manufacturer V');
 
 
+-- Step 1: Add a new column for the image links
+ALTER TABLE Products
+ADD ImageLink VARCHAR(200);
+
+-- Step 2: Update the image links for each product
+UPDATE Products
+SET ImageLink = 'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1274-297x223.jpg'
+WHERE ID = 1;
+
+UPDATE Products
+SET ImageLink = 'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1270-297x223.jpg'
+WHERE ID = 2;
+
+UPDATE Products
+SET ImageLink = 'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1268-297x223.jpg'
+WHERE ID = 3;
+
+UPDATE Products
+SET ImageLink = 'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1275-297x223.jpg'
+WHERE ID = 4;
+
+UPDATE Products
+SET ImageLink = 'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1272-297x223.jpg'
+WHERE ID = 5;
+
+UPDATE Products
+SET ImageLink = 'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1273-297x223.jpg'
+WHERE ID = 6;
+
+UPDATE Products
+SET ImageLink = 'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1271-297x223.jpg'
+WHERE ID = 7;
+
+UPDATE Products
+SET ImageLink = 'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1268-297x223.jpg'
+WHERE ID = 8;
+
+UPDATE Products
+SET ImageLink = 'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1271-297x223.jpg'
+WHERE ID = 9;
+
+-- Verify the changes
+SELECT * FROM Products;
+
 
 -- Create the Orders table
 CREATE TABLE Orders (

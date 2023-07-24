@@ -32,7 +32,7 @@ export const getCartById = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while retrieving the cart item... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -54,7 +54,7 @@ export const createCart = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while creating the cart item... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -78,7 +78,7 @@ export const updateCart = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while updating the cart item... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -99,6 +99,6 @@ export const deleteCart = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while deleting the cart item... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };

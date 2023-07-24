@@ -31,6 +31,7 @@ export const router = createBrowserRouter(
                 <Route path="/blog" element={<Blog />} />
                 <Route path="/about" element={<About />} />
                 <Route path="products" element={<ProductList />} />
+                <Route path="product/:id" element={<ProductDetails />} />
                 <Route path="cart" element={<Cart />} />
                 <Route path="checkout" element={<CheckoutPage />} />
 

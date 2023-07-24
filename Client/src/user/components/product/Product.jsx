@@ -23,17 +23,21 @@ const Product = () => {
     <>
       {displayedProducts.map((product) => (
         <div key={product.ID} className="flex flex-col gap-2 cursor-pointer select">
+        {/* Wrap the product image and name with Link component */}
+        <Link to={`/product/${product.ID}`}>
           <div className="rounded-[5px] h-[13rem]">
             <img
               className="rounded-[10px] h-full object-contain"
-              src={product.ImageURL} // Use the product's ImageURL from the Context
+              src={product.ImageURL}
               alt={product.Name}
             />
           </div>
 
+
           <h3 className="font-bold hover:text-red-500 transition-all duration-300">
             {product.Name}
           </h3>
+             </Link>
           <p className="relative inline-block group font-bold">
             <span className="inline-block transition-all duration-300 transform group-hover:translate-x-[-100%]transform -translate-x-[-100%] group-hover:translate-x-0 ">
               ${product.Price}

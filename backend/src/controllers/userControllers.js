@@ -15,7 +15,7 @@ export const getUsers = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while retrieving users... ${error.message}` });
   } finally {
-    sql.close(); // Close the SQL connection
+    // sql.close(); // Close the SQL connection
   }
 };
 
@@ -33,7 +33,7 @@ export const getUserById = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while retrieving the user... ${error.message}` });
   } finally {
-    sql.close(); // Close the SQL connection
+    // sql.close(); // Close the SQL connection
   }
 };
 
@@ -55,7 +55,7 @@ export const createUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while creating the user... ${error.message}` });
   } finally {
-    sql.close(); // Close the SQL connection
+    // sql.close(); // Close the SQL connection
   }
 };
 
@@ -76,7 +76,7 @@ export const updateUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while updating the user... ${error.message}` });
   } finally {
-    sql.close(); // Close the SQL connection
+    // sql.close(); // Close the SQL connection
   }
 };
 
@@ -93,6 +93,6 @@ export const deleteUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while deleting the user... ${error.message}` });
   } finally {
-    sql.close(); // Close the SQL connection
+    // sql.close(); // Close the SQL connection
   }
 };

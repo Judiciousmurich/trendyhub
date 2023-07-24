@@ -38,7 +38,7 @@ export const Register = async (req, res) => {
         console.log(error)
         res.status(500).json({ error: 'An error occurred while creating the user' + error});
     } finally {
-        sql.close();
+        // sql.close();
     }
 
 };

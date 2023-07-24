@@ -10,7 +10,7 @@ export const getOrderItems = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while retrieving order items... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -32,7 +32,7 @@ export const getOrderItemById = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while retrieving the order item... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -53,7 +53,7 @@ export const createOrderItem = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while creating the order item... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -76,7 +76,7 @@ export const updateOrderItem = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while updating the order item... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -97,6 +97,6 @@ export const deleteOrderItem = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while deleting the order item... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };

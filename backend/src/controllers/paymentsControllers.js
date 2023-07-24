@@ -10,7 +10,7 @@ export const getPayments = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while retrieving payments... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -32,7 +32,7 @@ export const getPaymentById = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while retrieving the payment... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -52,7 +52,7 @@ export const createPayment = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while creating the payment... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -74,7 +74,7 @@ export const updatePayment = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while updating the payment... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -95,6 +95,6 @@ export const deletePayment = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while deleting the payment... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };

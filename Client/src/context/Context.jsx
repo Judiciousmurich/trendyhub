@@ -30,7 +30,6 @@ export const ContextProvider = ({ children }) => {
           'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1273-297x223.jpg',
           'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1271-297x223.jpg',
           'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1268-297x223.jpg',
-          
           'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1271-297x223.jpg'
 
         ];

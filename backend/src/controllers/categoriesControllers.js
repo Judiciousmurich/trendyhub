@@ -10,7 +10,7 @@ export const getCategories = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while retrieving categories... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -32,7 +32,7 @@ export const getCategoryById = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while retrieving the category... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -51,7 +51,7 @@ export const createCategory = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while creating the category... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -72,7 +72,7 @@ export const updateCategory = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while updating the category... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
 
@@ -93,6 +93,6 @@ export const deleteCategory = async (req, res) => {
   } catch (error) {
     res.status(500).json({ error: `An error occurred while deleting the category... ${error.message}` });
   } finally {
-    sql.close();
+    // sql.close();
   }
 };
