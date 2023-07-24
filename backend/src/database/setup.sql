@@ -1,7 +1,6 @@
 -- Table for Users
 CREATE TABLE Users (
   id INT IDENTITY(1,1) PRIMARY KEY,
-  username VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   created_at VARCHAR(255);
@@ -43,7 +42,10 @@ VALUES
     ('Gore Wear C7', 'Description for Gore Wear C7', 159.99, 20, 'Cycling Apparel', 'Manufacturer Z'),
     ('White EliteBook Tablet 810', 'Description for White EliteBook Tablet 810', 899.99, 15, 'Tablets', 'Manufacturer W'),
     ('Beats', 'Description for Beats', 149.99, 25, 'Music Accessories', 'Manufacturer V'),
-    ('Rocky Mountain', 'Description for Rocky Mountain', 1299.99, 10, 'Cycling Apparel', 'Manufacturer U');
+    ('Rocky Mountain', 'Description for Rocky Mountain', 1299.99, 10, 'Cycling Apparel', 'Manufacturer U'),
+    ('Good Wear C7', 'Description for Gore Wear C7', 159.99, 20, 'Cycling Apparel', 'Manufacturer Z'),
+    ('Audio System Multiroom 360', 'Description for Wireless Audio System Multiroom 360', 299.99, 30, 'Wireless Audio Systems', 'Manufacturer Y'),
+    ('Beats', 'Description for Beats', 149.99, 25, 'Music Accessories', 'Manufacturer V');
 
 
 
