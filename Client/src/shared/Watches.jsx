@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Watches = () => {
   return (
@@ -14,7 +15,7 @@ const Watches = () => {
         <h5 className='text-[#ffff] font-bold mb-3'>Beats Solo Air</h5>
       <p className="font-bold mb-3">Summer Sale</p>
       <p className='mb-3'>Company that’s grown from 270 to 480 employees in the last 12 months.</p>
-      <button className="bg-white text-[#84e1aa] rounded-[50px] w-fit py-2 px-6">Shop</button>
+      <button className="bg-white text-[#84e1aa] rounded-[50px] w-fit py-2 px-6"><Link to ='/products'>Shop</Link></button>
     </div>
     <img className="absolute h-[50%] left-[20%] translate-y-[-55%] " src="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/O6CCQV1.png" alt="" />
   </div>

@@ -20,7 +20,7 @@ export const Sidebar = () => {
           <Link to="users" className="flex items-center gap-2 text-white">
             Users
           </Link>
-          <Link to="users" className="flex items-center gap-2 text-white">
+          <Link to="createproduct" className="flex items-center gap-2 text-white">
             CreateProduct
           </Link>
 

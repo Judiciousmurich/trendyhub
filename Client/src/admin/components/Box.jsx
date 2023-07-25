@@ -1,6 +1,6 @@
-export const Box = ({ icon, tally, text,bg }) => {
+export const Box = ({ icon, tally, text, bg }) => {
   return (
-    <div className="shadow-lg p-[1rem]  w-[15rem] h-fit flex gap-5 border" >
+    <div className="sm:shadow-lg p-[1rem]  sm:w-[15rem] h-fit flex gap-5 border" >
       <div className={"rounded-full h-[3rem] w-[3rem] img " + bg}>
         <img src={icon} alt="" className="h-[3rem]" />
       </div>

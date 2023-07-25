@@ -9,8 +9,7 @@ export const AdminLayout = () => {
       <Navbar />
       <div className="flex">
         <Sidebar />
-        <div>
-
+        <div className="w-full ">
           <Outlet />
         </div>
       </div>

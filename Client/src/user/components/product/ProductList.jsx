@@ -4,6 +4,7 @@ import Product from "./Product";
 import Clients from "../../../shared/Clients";
 import { FaSearch, FaCaretDown } from "react-icons/fa";
 import PriceFilter from "../../../shared/Range";
+// import filterProductsByCategory from "./FilterController"; 
 
 const ProductList = () => {
   const [showCategories, setShowCategories] = useState(false);
@@ -28,9 +29,9 @@ const ProductList = () => {
         </i>
       </div>
 
-      <div className="flex">
+      <div className="sm:flex" >
         <div>
-          <div className="flex bg-[#ededed] p-3 rounded-[50px] m-6">
+          <div className="flex bg-[#ededed] p-3 rounded-[50px] m-6 ">
             <input
               type="email"
               placeholder="Search Here"
@@ -96,12 +97,12 @@ const ProductList = () => {
               Showing 1-9 of 10 results
             </h1>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 ">
             <Product />
           </div>
         </div>
       </div>
-      <Clients />
+      {/* <Clients /> */}
     </>
   );
 };

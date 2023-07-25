@@ -1,25 +1,55 @@
-import React, { useState } from 'react';
+import { yupResolver } from "@hookform/resolvers/yup";
+import React, { useEffect, useState } from "react";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { getProductById, updateProduct } from "../../utils/apiCalls";
+import { useParams } from "react-router-dom";
 
 const UpdateProductForm = () => {
-    const [productName, setProductName] = useState('');
-    const [description, setDescription] = useState('');
-    const [price, setPrice] = useState('');
-    const [category, setCategory] = useState('');
+    const [data, setData] = useState([])
+    // const [name, setName] = useState("");
+    // const [description, setDescripton] = useState("");
+    // const [price, setPrice] = useState("");
+    // const [category, setCategory] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Implement form submission functionality here
-        console.log('Form submitted');
-        console.log('Product Name:', productName);
-        console.log('Description:', description);
-        console.log('Price:', price);
-        console.log('Category:', category);
+
+    const { product_id } = useParams()
+
+    const getProduct = async () => { const data = await getProductById(product_id); setData(data) }
+
+    useEffect(() => {
+        getProduct()
+    }, [])
+
+    const schema = yup.object().shape({
+        Name: yup.string().required("Name is required"),
+        Description: yup.string().required("Description is required"),
+        Price: yup.string().required("Price is required"),
+        Category: yup.string().required("Category is required"),
+        // ImageLink: yup.string().url("Invalid URL format").required("Image URL is required"),
+    });
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        resolver: yupResolver(schema),
+    });
+
+    const onSubmit = (data) => {
+        console.log(data)
+        updateProduct(data, product_id)
+        
     };
 
     return (
-        <form className="max-w-sm m-6" onSubmit={handleSubmit}>
+        <form className="max-w-sm m-6" onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="productName">
+                <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="productName"
+                >
                     Product Name
                 </label>
                 <input
@@ -27,12 +57,17 @@ const UpdateProductForm = () => {
                     id="productName"
                     type="text"
                     placeholder="Enter product name"
-                    value={productName}
-                    onChange={(e) => setProductName(e.target.value)}
+                    required="required"
+                    {...register("Name")}
+                    Value={data.Name}
                 />
             </div>
+            <p className="error">{errors.Name?.message}</p>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="description">
+                <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="description"
+                >
                     Description
                 </label>
                 <textarea
@@ -40,12 +75,17 @@ const UpdateProductForm = () => {
                     id="description"
                     rows="3"
                     placeholder="Enter description"
-                    value={description}
-                    onChange={(e) => setDescription(e.target.value)}
+                    required="required"
+                    {...register("Description")}
+                    value={data.Description}
                 />
             </div>
+            <p className="error">{errors.Description?.message}</p>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="price">
+                <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="price"
+                >
                     Price
                 </label>
                 <input
@@ -53,12 +93,17 @@ const UpdateProductForm = () => {
                     id="price"
                     type="number"
                     placeholder="Enter price"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
+                    required="required"
+                    {...register("Price")}
+                    Value = {data.Price}
                 />
             </div>
+            <p className="error">{errors.Price?.message}</p>
             <div className="mb-4">
-                <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="category">
+                <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="category"
+                >
                     Category
                 </label>
                 <input
@@ -66,10 +111,29 @@ const UpdateProductForm = () => {
                     id="category"
                     type="text"
                     placeholder="Enter category"
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
+                    required="required"
+                    {...register("Category")}
+                    value={data.Category}
                 />
             </div>
+            <p className="error">{errors.Category?.message}</p>
+            {/* <div className="mb-4">
+                <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="image"
+                >
+                    Image
+                </label>
+                <input
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    id="imageLink"
+                    type="file"
+                    placeholder="Enter image URL"
+                    required="required"
+                    {...register("ImageLink")}
+                
+                />
+            </div> */}
             <div className="flex items-center ">
                 <button
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

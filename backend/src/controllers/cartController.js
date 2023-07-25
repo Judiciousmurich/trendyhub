@@ -38,17 +38,15 @@ export const getCartById = async (req, res) => {
 
 // Create a new cart item
 export const createCart = async (req, res) => {
-  const { id, product_id, name, price, quantity } = req.body;
+  const { id, product_id,} = req.body;
 
   try {
     const pool = await sql.connect(config.sql);
     const result = await pool.request()
       .input('id', sql.Int, id)
       .input('product_id', sql.Int, product_id)
-      .input('name', sql.VarChar(255), name)
-      .input('price', sql.Decimal(10, 2), price)
-      .input('quantity', sql.Int, quantity)
-      .query('INSERT INTO cart (id, product_id, name, price, quantity) VALUES (@id, @product_id, @name, @price, @quantity)');
+      
+      .query('INSERT INTO cart (id, product_id) VALUES (@id, @product_id)');
 
     res.status(201).json({ message: 'Cart item created successfully' });
   } catch (error) {

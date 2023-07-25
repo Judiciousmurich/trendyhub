@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaShoppingBag, FaSearch } from "react-icons/fa";
 import './nav.css';
+// import '../../context/Context'
+
+const { cartItems } = useContext(Context);
+
 
 const Navbar = () => {
   const handleLogout = () => {
@@ -20,26 +24,26 @@ const Navbar = () => {
 
         </div>
         <div className="links">
-        {user && (
-          <>
-          <NavLink to="/" >
-            Home
-          </NavLink>
-          <NavLink to="/products" >
-            Shop
-          </NavLink>
-          <NavLink to="/about" >
-            About us
-          </NavLink>
-          <NavLink to="/blog" >
-            Blog
-          </NavLink>
-          <NavLink to="/contact" >
-            Contact Us
-          </NavLink>
-          </>
+          {user && (
+            <>
+              <NavLink to="/" >
+                Home
+              </NavLink>
+              <NavLink to="/products" >
+                Shop
+              </NavLink>
+              <NavLink to="/about" >
+                About us
+              </NavLink>
+              <NavLink to="/blog" >
+                Blog
+              </NavLink>
+              <NavLink to="/contact" >
+                Contact Us
+              </NavLink>
+            </>
 
-        )}
+          )}
         </div>
         {!user && (
           <NavLink to="/auth/login" className="btn">
@@ -48,7 +52,7 @@ const Navbar = () => {
         )}
         {user && (
           <button className="btn" onClick={handleLogout} style={{ fontSize: "1rem" }}>
-          Logout
+            Logout
           </button>
         )}
 
@@ -60,10 +64,13 @@ const Navbar = () => {
           </p>
           <p>
 
-            <NavLink to="cart">
-
+            <NavLink to="/cart">
               <FaShoppingBag />
+              {cartItems.length > 0 && (
+                <span className="notification-badge">{cartItems.length}</span>
+              )}
             </NavLink>
+
           </p>
         </div>
       </div>

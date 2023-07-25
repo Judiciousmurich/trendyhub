@@ -6,23 +6,6 @@ CREATE TABLE Users (
   created_at VARCHAR(255);
 );
 
--- Insert 10 records into the Users table
-INSERT INTO Users (Name, Email, Password, Address)
-VALUES
-    ('John Doe', 'john.doe@example.com', 'password1', '123 Main St'),
-    ('Jane Smith', 'jane.smith@example.com', 'password2', '456 Elm St'),
-    ('Michael Johnson', 'michael.johnson@example.com', 'password3', '789 Oak Ave'),
-    ('Emily Davis', 'emily.davis@example.com', 'password4', '321 Pine St'),
-    ('David Wilson', 'david.wilson@example.com', 'password5', '654 Cedar Rd'),
-    ('Olivia Taylor', 'olivia.taylor@example.com', 'password6', '987 Walnut Ln'),
-    ('Daniel Anderson', 'daniel.anderson@example.com', 'password7', '135 Elmwood Dr'),
-    ('Sophia Clark', 'sophia.clark@example.com', 'password8', '753 Oakwood Ct'),
-    ('Ethan Lee', 'ethan.lee@example.com', 'password9', '246 Pinehurst Ave'),
-    ('Ava Martinez', 'ava.martinez@example.com', 'password10', '579 Maple Rd');
-
--- Create the Products table
-
-
 -- Create the Products table
 CREATE TABLE Products (
     ID INT IDENTITY(1,1) PRIMARY KEY,
