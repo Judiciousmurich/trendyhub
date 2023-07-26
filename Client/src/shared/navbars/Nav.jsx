@@ -43,6 +43,9 @@ const Navbar = () => {
               <NavLink to="/contact" >
                 Contact Us
               </NavLink>
+              <NavLink to="/track" >
+                Track Order
+              </NavLink>
             </>
 
           )}

@@ -63,3 +63,16 @@ export const getProducts = async () => {
     console.error(error);
   }
 };
+
+
+// //USERS
+// //GETPRODUCT
+// export const getUsers = async () => {
+//   try {
+//     // axios request
+//     const { users} = await axios.get(apiDomain + "/users");
+//     return users;
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
