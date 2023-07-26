@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { apiDomain } from '../../../utils/utilsDomain';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-import Clients from '../../../shared/Clients';
 import Description from '../../../shared/Description ';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Context } from '../../../context/Context';
 
 
 const ProductDetails = () => {
   const [product, setProduct] = useState(null);
   const [itemCount, setItemCount] = useState(1);
   const { id } = useParams();
+
+  const { setCartItems } = useContext(Context);
+  
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
@@ -165,6 +168,7 @@ const ProductDetails = () => {
         </div>
         <hr />
         <Description />
+        
         
       </div>
       {/* <Clients /> */}

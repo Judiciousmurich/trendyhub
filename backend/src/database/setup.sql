@@ -15,6 +15,7 @@ CREATE TABLE Products (
     Quantity INT,
     Category VARCHAR(50), -- Store the category name directly
     Manufacturer VARCHAR(100)
+     Stars INT NOT NULL DEFAULT 5;
 );
 
 -- Insert records into the Products table

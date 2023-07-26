@@ -1,4 +1,11 @@
+import { NavLink } from "react-router-dom";
+
 export const Navbar = () => {
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+
+    window.location.href = '/auth/login';
+  };
   return (
     <div className="sm:h-[10vh] bg-[#06d996] p-2">
       <div className="flex justify-between items-center">
@@ -12,7 +19,13 @@ export const Navbar = () => {
             placeholder="search..."
           />
         </div>
-        <div className=""></div>
+        <div className="">
+        
+          <button className="text-white px-4 py-1  rounded-[20px]" onClick={handleLogout} style={{ fontSize: "1rem" }}>
+            Logout
+          </button>
+      
+        </div>
       </div>
     </div>
   );

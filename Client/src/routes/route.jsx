@@ -19,6 +19,7 @@ import ProductsTable from "../admin/components/ProductsTable";
 import UsersTable from "../admin/components/UsersTable";
 import CheckoutPage from "../user/components/checkout/Checkout";
 import CreatePoductForm from "../admin/components/CreateProduct";
+import OrdersTable from "../admin/components/OrdersTable";
 
 export const router = createBrowserRouter(
     createRoutesFromElements(
@@ -42,6 +43,7 @@ export const router = createBrowserRouter(
                 <Route path="products" element={<ProductsTable />} />
                 <Route path="users" element={<UsersTable />} />
                 <Route path="createproduct" element={<CreatePoductForm />} />
+                <Route path="orders" element={<OrdersTable/>} />
                 <Route path="update/:product_id" element={<UpdateProductForm />} />
                 <Route path="more/:product_id" element={<ProductDetails />} />
             </Route>

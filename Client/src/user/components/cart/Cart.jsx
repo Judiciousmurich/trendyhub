@@ -1,23 +1,28 @@
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { apiDomain } from "../../../utils/utilsDomain";
 import { FaTrash } from "react-icons/fa";
 import CartFallback from "./FallBack";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Context } from "../../../context/Context";
+import Payment from "../payment/Payment";
 
 
 const Cart = () => {
   const navigate = useNavigate();
   const [cartItems, setCartItems] = useState([]);
+  const { setCartItems: updateItemsCount } = useContext(Context);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   // Function to get the cart items using Axios
   const getCartItems = async () => {
     try {
       const response = await axios.get(`${apiDomain}/cart`);
       setCartItems(response.data);
+      updateItemsCount(response.data)
     } catch (error) {
       console.error("Error fetching cart items:", error);
     }
@@ -28,9 +33,9 @@ const Cart = () => {
     console.log(cartItems);
   }, []);
 
-  const handleProceedToCheckout = () => {
-    navigate("/checkout");
-  };
+
+
+
 
 
   const handleRemoveItem = async (cartItemId) => {
@@ -40,44 +45,44 @@ const Cart = () => {
 
       // Refresh the cart items by calling the getCartItems function again
       getCartItems();
-       // Get the name of the removed item to show it in the notification
-       const removedItem = cartItems.find((item) => item.cart_id === cartItemId);
+      // Get the name of the removed item to show it in the notification
+      const removedItem = cartItems.find((item) => item.cart_id === cartItemId);
 
-       // Show the success notification
-       toast.error(`${removedItem.Name} has been removed from the cart.`, {
-         position: "top-right",
-         autoClose: 3000,
-         hideProgressBar: false,
-         closeOnClick: true,
-         pauseOnHover: true,
-         draggable: true,
-         progress: undefined,
-       });
+      // Show the success notification
+
+      toast.success(`${removedItem.Name} has been removed from the cart.`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
     } catch (error) {
       console.error("Error removing item from cart:", error);
     }
   };
 
-  const calculateTotalPrice = () => {
-    const totalPrice = cartItems.reduce(
-      (sum, item) => sum + item.price * item.quantity,
-      0
-    );
-    return totalPrice.toFixed(2);
-  };
+  useEffect(() => {
+    // Calculate the total price whenever cartItems change
+    const calculateTotalPrice = () => {
+      console.log(cartItems)
+      const totalPrice = cartItems.reduce(
+        (sum, item) => sum + (item.Quantity * item.Price || 0), // Use optional chaining to safely access item.price
+        0
+      );
+      return totalPrice;
+    };
+
+    // Call the calculateTotalPrice function and update the totalPrice state
+    setTotalPrice(calculateTotalPrice());
+  }, [cartItems]);
 
   return (
     <>
       <ToastContainer />
-      {/* Display cart items */}
-      {/* {cartItems.map((item) => (
-        <div key={item.cart_id}>
-          <p>{item.name}</p>
-          <p>Quantity: {item.quantity}</p>
-          <p>Price: ${item.price}</p>
-          <button onClick={() => handleRemoveItem(item.cart_id)}>Remove</button>
-        </div>
-      ))} */}
+
 
       <div className="cart sm:flex justify-around p-4">
         <div className="flex flex-col gap-4">
@@ -91,7 +96,7 @@ const Cart = () => {
                   alt="product"
                 />
               </div>
-            
+
 
               <div>
                 <h3 className="font-bold hover:text-red-500 transition-all duration-300">
@@ -101,7 +106,7 @@ const Cart = () => {
                   <span className="font-bold ">${item.Price}</span>
                 </p>
                 <br />
-                <button className="bg-[gray] px-3 py-1 w-full flex items-center gap-2" onClick={() => handleRemoveItem(item.cart_id)}>
+                <button className="bg-[gray] px-3 py-1 w-fit flex items-center gap-2" onClick={() => handleRemoveItem(item.cart_id)}>
                   <FaTrash /> Remove
                 </button>
 
@@ -116,14 +121,10 @@ const Cart = () => {
           <hr />
           <div>
             <p className="mb-4 font-bold">Total Price:</p>
-            <p className="font-bold mb-4">${calculateTotalPrice()}</p>
+            <p className="font-bold mb-4">$ {totalPrice.toFixed(2)}</p>
             {/* Use the handleProceedToCheckout function to navigate to the CheckoutPage */}
-            <button
-              className="bg-black text-white px-8 py-3 rounded mb-4 w-full"
-              onClick={handleProceedToCheckout}
-            >
-              PROCEED TO CHECKOUT
-            </button>
+            
+            <Payment cartItems={cartItems} />
           </div>
         </div>
       </div>

@@ -28,7 +28,16 @@ const Login = () => {
         if (data.token) {
           dispatch({ type: "LOGIN_SUCCESS", payload: data.token });
           localStorage.setItem("user", JSON.stringify(data.token));
-          navigate('/')
+          console.log(data)
+          if (data.role === "admin") {
+            navigate('/admin')
+          } else if (data.role === "user") {
+
+            navigate('/')
+          }
+          else {
+            navigate("/auth/login")
+          }
         }
       })
       .catch(({ response }) => {

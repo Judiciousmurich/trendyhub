@@ -2,12 +2,14 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaShoppingBag, FaSearch } from "react-icons/fa";
 import './nav.css';
+import { Context } from '../../context/Context';
 // import '../../context/Context'
 
-const { cartItems } = useContext(Context);
+
 
 
 const Navbar = () => {
+  const { cartItems } = useContext(Context);
   const handleLogout = () => {
     localStorage.removeItem('user');
 
@@ -64,8 +66,8 @@ const Navbar = () => {
           </p>
           <p>
 
-            <NavLink to="/cart">
-              <FaShoppingBag />
+            <NavLink to="/cart" className="relative  flex  items-center  ">
+              <FaShoppingBag/>
               {cartItems.length > 0 && (
                 <span className="notification-badge">{cartItems.length}</span>
               )}

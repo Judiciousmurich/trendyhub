@@ -3,18 +3,33 @@ import Reducer from './Reducer';
 import axios from "axios";
 import { apiDomain } from "../utils/utilsDomain";
 
-// Initial User
+
+// Initial User and CartItems
 const INITIAL_STATE = {
-  user: JSON.parse(localStorage.getItem('user')) || null
+  user: JSON.parse(localStorage.getItem('user')) || null,
 }
 
 // Create Context
-export const Context = createContext(INITIAL_STATE);
+export const Context = createContext({
+  ...INITIAL_STATE,
+});
 
 // Provider component
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, INITIAL_STATE);
   const [products, setProducts] = useState([]);
+  const [cartItems, setCartItems] = useState([])
+
+  // ...
+
+  const getCartItems = async () => {
+    try {
+      const response = await axios.get(`${apiDomain}/cart`);
+      dispatch({ type: "SET_CART_ITEMS", payload: response.data });
+    } catch (error) {
+      console.error("Error fetching cart items:", error);
+    }
+  };
 
   useEffect(() => {
     // Fetch product data from the backend
@@ -46,13 +61,34 @@ export const ContextProvider = ({ children }) => {
         console.error('Error fetching products:', error);
       });
   }, []);
+  // Fetch cart items
+  useEffect(() => {
+    getCartItems();
+  }, []);
 
+
+  const handleAddToCart = async (product_id) => {
+    try {
+      // Send a POST request to the server to add the item to the cart
+      await axios.post(`${apiDomain}/cart`, { product_id });
+
+      // Refresh the cart items by calling the getCartItems function again
+      getCartItems();
+
+      // Show a success notification using your preferred notification library (e.g., react-toastify)
+      // toast.success('Item added to cart successfully!', { ... });
+    } catch (error) {
+      console.error("Error adding item to cart:", error);
+    }
+  };
+
+  
   useEffect(() => {
     // localStorage.setItem("user", JSON.stringify(state.user))
   }, [state.user]);
 
   return (
-    <Context.Provider value={{ user: state.user, dispatch, products }}>
+    <Context.Provider value={{ user: state.user, cartItems, dispatch, products, handleAddToCart, setCartItems }}>
       {children}
     </Context.Provider>
   );

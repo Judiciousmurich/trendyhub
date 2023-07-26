@@ -10,6 +10,7 @@ import userRoutes from './src/routes/userRoutes.js';
 import cors from 'cors'
 import authRoutes from './src/routes/authRoutes.js';
 import cartRoutes from './src/routes/cartRoute.js';
+import stripe from './src/routes/stripeRoute.js';
 
 const app = express();
 //
@@ -23,6 +24,7 @@ categoryRoutes(app)
 orderItemRoutes(app)
 orderRoutes(app)
 productRoutes(app)
+stripe(app)
 userRoutes(app)
 cartRoutes(app)
 paymentRoutes(app)
