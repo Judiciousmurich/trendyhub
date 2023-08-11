@@ -95,7 +95,7 @@ const UpdateProductForm = () => {
                 />
             </div>
             <p className="error">{errors.Category?.message}</p>
-            <div className="mb-4">
+            {/* <div className="mb-4">
             <label
                     className="block text-gray-700 text-sm font-bold mb-2"
                     htmlFor="image"
@@ -110,7 +110,7 @@ const UpdateProductForm = () => {
           required="required"
           {...register("ImageLink")}
         />
-      </div>
+      </div> */}
       <p className="error">{errors.ImageLink?.message}</p>
             <div className="flex items-center ">
                 <button

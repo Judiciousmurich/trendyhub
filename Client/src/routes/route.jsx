@@ -37,6 +37,7 @@ export const router = createBrowserRouter(
                 <Route path="product/:id" element={<ProductDetails />} />
                 <Route path="cart" element={<Cart />} />
                 <Route path="checkout" element={<CheckoutPage />} />
+                {/* <Route path="checkout" element={<CheckoutPage />} /> */}
 
             </Route>
             {/* ADMIN ROUTES */}

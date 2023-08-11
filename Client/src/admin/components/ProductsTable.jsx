@@ -54,7 +54,7 @@ const ProductsTable = () => {
                         <td className="py-2 px-4 border-b">{item.Category}</td>
                         <td className="py-2 px-4 border-b">
                             <button
-                                className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mr-2"
+                                className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded mr-2 mb-1 "
                                 onClick={() => handleDelete(item.ID)}
                             >
                                 Delete
