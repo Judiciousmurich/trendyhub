@@ -1,17 +1,12 @@
 import React from 'react'
 import News from '../../shared/News'
-import { Link } from 'react-router-dom'
 import Clients from '../../shared/Clients'
+import BackHome from '../../shared/BackHome'
 
 const Blog = () => {
   return (
     <>
-    <div className="bg-[#e2e2e2] w-screen p-16  mb-8 ">
-        <i className="flex flex-col items-center w-full">
-          <Link to="/" className=" text-[#666666]">Home / Blog</Link>
-          <h1 className="font-bold text-4xl ">Blog</h1>
-        </i>
-      </div>
+   <BackHome/>
   
 <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 p-6 ">
 <News image="https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/10/adult-blur-close-up-267394-1024x573.jpg"

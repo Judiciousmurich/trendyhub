@@ -9,7 +9,7 @@ const Footer = () => {
     <div className='sm:flex justify-between m-[2rem]'>
       <div className='flex flex-col gap-2'>
         <Link className='text-[#f77b82] font-bold tracking-widest mb-5'>TRENDYHUB</Link>
-        <p className='mb-5 text-[#d7d7d7]'>There are many variations passages of,<br /> Lorem Ipsum available, but the majority have</p>
+        <p className='mb-5 text-[#8e8d8d]'>There are many variations passages of,<br /> Lorem Ipsum available, but the majority have</p>
         <p className='flex gap-5'><FaFacebook /><FaInstagram /> <FaLinkedin /><FaTwitter /></p>
 
       </div>
