@@ -14,7 +14,7 @@ const About = () => {
     </div>
       <div className='flex mb-20'> 
       <div>
-        <h1 className='text-[#f42c37] m-6 font-bold font-3xl font-serif '>welcome to Trendyhub</h1>
+        <h1 className='text-[#f42c37] m-6 font-bold text-lg tracking-wide font-serif '>welcome to Trendyhub</h1>
         <h1 className='font-bold text-4xl m-6'>Who Are We?</h1>
         <p className='m-8 text-[#686868]'>When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray
         <br/>
