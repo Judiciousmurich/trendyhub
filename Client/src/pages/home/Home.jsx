@@ -35,7 +35,7 @@ const Home = () => {
           <div className="flex flex-col w-[40%]  items-end ">
             <p className="font-bold text-1xl mx-2 tracking-wide">Description</p>
             <p className="hidden sm:block text-center tracking-wide text-[#666666]">
-              There are many variations passages <br />of Lorem Ipsum available, but the<br /> majority have suffered alteration
+              There are many variations passages <br />of Lorem Ipsum available, but the<br /> majority have suffered alteration.
             </p>
           </div>
         </div>
