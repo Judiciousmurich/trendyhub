@@ -20,7 +20,6 @@ export const ContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([])
 
-  // ...
 
   const getCartItems = async () => {
     try {
@@ -35,7 +34,6 @@ export const ContextProvider = ({ children }) => {
     // Fetch product data from the backend
     axios.get(`${apiDomain}/products`)
       .then((response) => {
-        // Assuming you have five image URLs corresponding to the products
         const imageUrls = [
           'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1274-297x223.jpg',
           'https://demo.phlox.pro/shop-digital/wp-content/uploads/sites/127/2019/09/Group-1270-297x223.jpg',
@@ -49,10 +47,9 @@ export const ContextProvider = ({ children }) => {
 
         ];
 
-        // Add the ImageURL property to each product object
         const productsWithImageURL = response.data.map((product, index) => ({
           ...product,
-          ImageURL: imageUrls[index], // Set the ImageURL based on the index
+          ImageURL: imageUrls[index], 
         }));
 
         setProducts(productsWithImageURL);
@@ -69,14 +66,12 @@ export const ContextProvider = ({ children }) => {
 
   const handleAddToCart = async (product_id) => {
     try {
-      // Send a POST request to the server to add the item to the cart
+     
       await axios.post(`${apiDomain}/cart`, { product_id });
 
-      // Refresh the cart items by calling the getCartItems function again
       getCartItems();
 
-      // Show a success notification using your preferred notification library (e.g., react-toastify)
-      // toast.success('Item added to cart successfully!', { ... });
+    
     } catch (error) {
       console.error("Error adding item to cart:", error);
     }
@@ -84,7 +79,6 @@ export const ContextProvider = ({ children }) => {
 
   
   useEffect(() => {
-    // localStorage.setItem("user", JSON.stringify(state.user))
   }, [state.user]);
 
   return (

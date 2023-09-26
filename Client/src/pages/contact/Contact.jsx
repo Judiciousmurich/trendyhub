@@ -58,7 +58,7 @@ const Contact = () => {
         />
 
       </div>
-      <Clients />
+      <Clients />""
     </>
   );
 };
