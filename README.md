@@ -1,7 +1,7 @@
 # trendyhub
 TrendyHub: Fashion innovation. Curated collection. Shop now, embrace trendsetting.
 
-# Technical details
+**# Technical details**
 
 React - A JavaScript library for building user interfaces
 
