@@ -25,7 +25,6 @@ const Track = () => {
     try {
       await axios.delete(`${apiDomain}/transaction/${order_id}`);
 
-      // Remove the deleted order from the orders state
       setOrders((prevOrders) => prevOrders.filter((order) => order.id !== order_id));
 
       toast.success('Order Cancelled successfully', {

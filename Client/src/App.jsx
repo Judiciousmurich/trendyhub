@@ -2,7 +2,6 @@
 
 import { RouterProvider } from "react-router-dom";
 import { router } from "./routes/route";
-// import { router } from "./routes/Routes";
 
 
 const App = () => {
