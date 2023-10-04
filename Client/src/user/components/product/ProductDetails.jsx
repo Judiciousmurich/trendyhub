@@ -67,12 +67,10 @@ const ProductDetails = () => {
 
     const starElements = [];
 
-    // Render filled stars
     for (let i = 0; i < filledStars; i++) {
       starElements.push(<span key={`filled-${i}`}>&#9733;</span>);
     }
 
-    // Render empty stars
     for (let i = 0; i < emptyStars; i++) {
       starElements.push(<span key={`empty-${i}`}>&#9734;</span>);
     }
@@ -81,7 +79,6 @@ const ProductDetails = () => {
   };
 
   if (!product) {
-    // Handle loading state here
     return <div>Loading...</div>;
   }
 

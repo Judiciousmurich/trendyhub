@@ -1,7 +1,7 @@
 import axios from "axios";
 import { apiDomain } from "./utilsDomain";
 
-//axios request to create a new product
+
 // PRODUCTS
 
 
