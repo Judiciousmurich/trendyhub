@@ -4,7 +4,6 @@ import Product from "./Product";
 import Clients from "../../../shared/Clients";
 import { FaSearch, FaCaretDown } from "react-icons/fa";
 import PriceFilter from "../../../shared/Range";
-// import filterProductsByCategory from "./FilterController"; 
 
 const ProductList = () => {
   const [showCategories, setShowCategories] = useState(false);
