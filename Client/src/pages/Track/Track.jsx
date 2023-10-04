@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'; // You may need to install this package if not already installed
+import axios from 'axios';
 import { apiDomain } from '../../utils/utilsDomain';
-import Clients from '../../shared/Clients';
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -12,7 +11,7 @@ const Track = () => {
   const fetchOrders = async () => {
     try {
       const response = await axios.get(`${apiDomain}/transaction`);
-      setOrders(response.data); // Pass the response data to setOrders
+      setOrders(response.data); 
     } catch (error) {
       console.error('Error fetching data:', error);
     }
@@ -22,7 +21,6 @@ const Track = () => {
     fetchOrders();
   }, []);
 
-  // Function to handle canceling an order
   const handleCancelOrder = async (order_id) => {
     try {
       await axios.delete(`${apiDomain}/transaction/${order_id}`);
