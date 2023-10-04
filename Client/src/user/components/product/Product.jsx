@@ -19,7 +19,6 @@ const Product = () => {
 
       {displayedProducts.map((product) => (
         <div key={product.ID} className="flex flex-col gap-2 cursor-pointer select ">
-          {/* Wrap the product image and name with Link component */}
           <Link to={`/product/${product.ID}`}>
             <div className="rounded-[5px] h-[13rem]">
               <img
@@ -39,12 +38,7 @@ const Product = () => {
               ${product.Price}
             </span>
             <ToastContainer />
-            {/* <button
-              className="left-full group-hover:translate-y-0 bg-red-500 text-white rounded-[20px] opacity-0 group-hover:opacity-100 transition-all duration-300"
-              onClick={() => handleAddToCart(product.ID)} // Call handleAddToCart with the product ID when the button is clicked
-            >
-              Add to Cart
-            </button> */}
+           
           </p>
 
         </div>

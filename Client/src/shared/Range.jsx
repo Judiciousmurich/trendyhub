@@ -13,7 +13,6 @@ const PriceFilter = () => {
     { name: 'Audio System Multiroom 360', price:299.99 },
     { name: 'Beats', price:149.99 },
    ,
-    // Add more products here
   ];
 
   const handleFilter = () => {
