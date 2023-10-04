@@ -17,7 +17,6 @@ const Cart = () => {
   const { setCartItems: updateItemsCount } = useContext(Context);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  // Function to get the cart items using Axios
   const getCartItems = async () => {
     try {
       const response = await axios.get(`${apiDomain}/cart`);
@@ -40,15 +39,11 @@ const Cart = () => {
 
   const handleRemoveItem = async (cartItemId) => {
     try {
-      // Send a DELETE request to the server to remove the item from the cart
       await axios.delete(`${apiDomain}/cart/${cartItemId}`);
 
-      // Refresh the cart items by calling the getCartItems function again
       getCartItems();
-      // Get the name of the removed item to show it in the notification
       const removedItem = cartItems.find((item) => item.cart_id === cartItemId);
 
-      // Show the success notification
 
       toast.success(`${removedItem.Name} has been removed from the cart.`, {
         position: "top-right",
@@ -65,17 +60,15 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    // Calculate the total price whenever cartItems change
     const calculateTotalPrice = () => {
       console.log(cartItems)
       const totalPrice = cartItems.reduce(
-        (sum, item) => sum + (item.Quantity * item.Price || 0), // Use optional chaining to safely access item.price
+        (sum, item) => sum + (item.Quantity * item.Price || 0), 
         0
       );
       return totalPrice;
     };
 
-    // Call the calculateTotalPrice function and update the totalPrice state
     setTotalPrice(calculateTotalPrice());
   }, [cartItems]);
 
@@ -122,7 +115,6 @@ const Cart = () => {
           <div>
             <p className="mb-4 font-bold">Total Price:</p>
             <p className="font-bold mb-4">$ {totalPrice.toFixed(2)}</p>
-            {/* Use the handleProceedToCheckout function to navigate to the CheckoutPage */}
             
             <Payment cartItems={cartItems} />
           </div>
