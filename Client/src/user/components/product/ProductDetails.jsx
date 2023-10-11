@@ -42,7 +42,6 @@ const ProductDetails = () => {
 
   const handleAddToCart = async (product_id) => {
     try {
-      // Send a POST request to the server to add the item to the cart
       await axios.post(`${apiDomain}/cart`, { product_id });
 
       // Refresh the cart items by calling the getCartItems function again
