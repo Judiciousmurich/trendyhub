@@ -56,7 +56,6 @@ export const getProductById = async (productID) => {
 //GETPRODUCT
 export const getProducts = async () => {
   try {
-    // axios request
     const { data } = await axios.get(apiDomain + "/products");
     return data;
   } catch (error) {
@@ -65,14 +64,3 @@ export const getProducts = async () => {
 };
 
 
-// //USERS
-// //GETPRODUCT
-// export const getUsers = async () => {
-//   try {
-//     // axios request
-//     const { users} = await axios.get(apiDomain + "/users");
-//     return users;
-//   } catch (error) {
-//     console.error(error);
-//   }
-// };
