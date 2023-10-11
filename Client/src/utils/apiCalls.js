@@ -34,7 +34,6 @@ export const updateProduct = async (updatedProduct, productID) => {
 
 export const deleteProduct = async (productID) => {
   try {
-    // axios request
     const { data } = await axios.delete(apiDomain + "/products/" + productID);
     return data;
   } catch (error) {
@@ -45,7 +44,6 @@ export const deleteProduct = async (productID) => {
 //GETPRODUCTBYID
 export const getProductById = async (productID) => {
   try {
-    // axios request
     const { data } = await axios.get(apiDomain + "/products/" + productID);
     return data;
   } catch (error) {
