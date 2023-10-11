@@ -8,7 +8,6 @@ import { apiDomain } from "./utilsDomain";
 // CREATE
 export const createProduct = async (product) => {
   try {
-    // axios request
     const { data } = await axios.post(apiDomain + "/products", product);
     return data;
   } catch (error) {
@@ -19,7 +18,6 @@ export const createProduct = async (product) => {
 // UPDATE
 export const updateProduct = async (updatedProduct, productID) => {
   try {
-    // axios request
     const { data } = await axios.put(
       apiDomain + "/products/" + productID,
       updatedProduct
