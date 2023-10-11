@@ -44,7 +44,6 @@ const ProductDetails = () => {
     try {
       await axios.post(`${apiDomain}/cart`, { product_id });
 
-      // Refresh the cart items by calling the getCartItems function again
       getCartItems();
 
       toast.success(`${product.Name} has been added to the cart successfully!`, {
