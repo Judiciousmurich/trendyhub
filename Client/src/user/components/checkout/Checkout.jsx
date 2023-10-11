@@ -80,7 +80,6 @@ const Checkout = () => {
             </p>
           )}
         </div>
-        {/* ToastContainer for displaying toast notifications */}
         <ToastContainer />
       </div>
       <hr />
