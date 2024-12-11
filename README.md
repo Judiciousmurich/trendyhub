@@ -17,6 +17,8 @@ An E-commerce platform built with **Node.js**, **Express**, **React**, and **Tai
 - **Shopping Cart**: Add, update, or remove items.
 - **Checkout**: Secure and efficient payment processing.
 - **Order Tracking**: Real-time updates on order status.
+  ![image](https://github.com/user-attachments/assets/b5295324-460e-48fd-a020-a04b5cc14a36)
+
 
 ### Admin Features
 - **Product Management**: Add, update, or remove products.
