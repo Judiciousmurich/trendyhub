@@ -41,7 +41,7 @@ An E-commerce platform built with **Node.js**, **Express**, **React**, and **Tai
 - **Express.js**
 
 ### Database
-- (Specify the database used, e.g. MySQL)
+- (database used MySQL)
 
 ---
 
