@@ -23,6 +23,9 @@ An E-commerce platform built with **Node.js**, **Express**, **React**, and **Tai
 - **Order Management**: Track and manage customer orders.
 - **User Management**: Manage user accounts and permissions.
 
+ ![image](https://github.com/user-attachments/assets/2ea04abf-e570-46a8-a5ef-721b90c81c53)
+
+
 ### General Features
 - **Responsive Design**: Optimized for mobile, tablet, and desktop.
 - **Search Functionality**: Fast and accurate product search.
