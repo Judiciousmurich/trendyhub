@@ -1,7 +1,13 @@
 # E-commerce App
 ## trendyhub
 TrendyHub: Fashion innovation. Curated collection. Shop now, embrace trendsetting.
+![image](https://github.com/user-attachments/assets/540899ae-e19b-4464-8469-92be290d629f)
+![image](https://github.com/user-attachments/assets/e87c2a10-141c-457f-8d89-992d18665f72)
+![image](https://github.com/user-attachments/assets/43efc514-d5d4-4612-9e02-a96834427fc2)
+![image](https://github.com/user-attachments/assets/9009ced2-cc9a-415a-a937-5519befb18cb)
+![image](https://github.com/user-attachments/assets/884170e3-c382-4528-ad62-040be6298484)
 
+# SHOP
 ![image](https://github.com/user-attachments/assets/48afed8d-0598-46d4-acba-950e33d7fc0c)
 
 
